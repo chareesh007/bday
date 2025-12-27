@@ -149,6 +149,110 @@ body {
   z-index: 5;
   box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
+  .amongus-peek {
+  position: fixed;
+  bottom: 22px;
+  left: -60px;
+  width: 55px;
+  z-index: 3;
+  animation: peekMove 12s ease-in-out infinite;
+  opacity: 0;
+}
+
+.amongus-peek img {
+  width: 100%;
+}
+
+/* Heart bubble */
+.amongus-peek .heart {
+  position: absolute;
+  top: -14px;
+  right: 6px;
+  font-size: 14px;
+  opacity: 0;
+  animation: heartPop 12s ease-in-out infinite;
+}
+
+/* Waving hand */
+.amongus-peek .hand {
+  position: absolute;
+  right: -6px;
+  bottom: 18px;
+  font-size: 14px;
+  opacity: 0;
+  transform-origin: left center;
+  animation: waveHand 12s ease-in-out infinite;
+}
+
+/* Peek movement */
+@keyframes peekMove {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(70px);
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(70px);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+}
+
+/* Heart pop animation */
+@keyframes heartPop {
+  0%, 15% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1);
+  }
+  40% {
+    opacity: 0;
+    transform: translateY(-14px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Hand wave animation */
+@keyframes waveHand {
+  0%, 18% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  22% {
+    opacity: 1;
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  30% {
+    transform: rotate(-20deg);
+  }
+  35% {
+    transform: rotate(20deg);
+  }
+  40% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
 </style>
 </head>
 
@@ -253,9 +357,14 @@ function toggleMusic() {
   }
 }
 </script>
-
+<div class="amongus-peek">
+  <img src="c:\stuff\dishhtml\coral1.png" alt="Among Us">
+  <span class="heart">❤️</span>
+  <span class="hand">👋</span>
+</div>
 </body>
 </html>
+
 
 
 
